@@ -1,8 +1,7 @@
-#include <iostream>
 #include "LRUCache.h"
+#include <iostream>
 
-int main()
-{
+int main() {
     LRUCache::LRUCache<int, std::string> cache(3);
 
     cache.Set(1, "one");
@@ -13,7 +12,7 @@ int main()
     bool do_get1 = cache.Get(1, result1);
     if (do_get1) {
         std::cout << "Value of key '1': " << result1 << std::endl;
-    }else {
+    } else {
         std::cout << "Key '1' was not found in cache" << std::endl;
     }
 
@@ -33,7 +32,7 @@ int main()
     bool do_get3 = cache.Get(1, result3);
     if (do_get3) {
         std::cout << "Value of key '1': " << result3 << std::endl;
-    }else {
+    } else {
         std::cout << "Key '1' was not found in cache" << std::endl;
     }
 
