@@ -3,38 +3,38 @@
 
 int main()
 {
-    LRUCache::LRUCache<std::string, int> cache(3);
+    LRUCache::LRUCache<int, std::string> cache(3);
 
-    cache.Set("one", 1);
-    cache.Set("two", 2);
-    cache.Set("three", 3);
+    cache.Set(1, "one");
+    cache.Set(2, "two");
+    cache.Set(3, "three");
 
-    int result1;
-    bool do_get1 = cache.Get("one", result1);
+    std::string result1;
+    bool do_get1 = cache.Get(1, result1);
     if (do_get1) {
-        std::cout << "Value of key 'one': " << result1 << std::endl;
+        std::cout << "Value of key '1': " << result1 << std::endl;
     }else {
-        std::cout << "Key 'one' was not found in cache" << std::endl;
+        std::cout << "Key '1' was not found in cache" << std::endl;
     }
 
-    cache.Set("four", 4);
+    cache.Set(4, "four");
 
-    int result2;
-    bool do_get2 = cache.Get("two", result2);
+    std::string result2;
+    bool do_get2 = cache.Get(2, result2);
     if (do_get2) {
-        std::cout << "Value of key 'two': " << result2 << std::endl;
+        std::cout << "Value of key '2': " << result2 << std::endl;
     } else {
-        std::cout << "Key 'two' was not found in cache" << std::endl;
+        std::cout << "Key '2' was not found in cache" << std::endl;
     }
 
     cache.Clear();
 
-    int result3;
-    bool do_get3 = cache.Get("one", result3);
+    std::string result3;
+    bool do_get3 = cache.Get(1, result3);
     if (do_get3) {
-        std::cout << "Value of key 'one': " << result3 << std::endl;
+        std::cout << "Value of key '1': " << result3 << std::endl;
     }else {
-        std::cout << "Key 'one' was not found in cache" << std::endl;
+        std::cout << "Key '1' was not found in cache" << std::endl;
     }
 
     return 0;
