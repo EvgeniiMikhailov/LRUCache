@@ -22,4 +22,4 @@ jobs:
           cd build
           cmake ..
           make
-          LRUCache_test
+          ctest
