@@ -1,0 +1,25 @@
+name: Test LRUCache on every commit
+
+on:
+  push:
+    branches: [ '*' ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake
+          sudo apt-get install -y libpthread-stubs0-dev
+      - name: Build and run tests
+        run: |
+          cd $GITHUB_WORKSPACE/LRUCache
+          mkdir build
+          cd build
+          cmake ..
+          make
+          LRUCache_test

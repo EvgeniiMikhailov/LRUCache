@@ -22,7 +22,8 @@ int main() {
     std::string value;
     bool success = cache.Get(1, value); // неудача, элемент 1 был удален
     success = cache.Get(2, value); // успех, значение value равно "value2"
-    cache.Clear(); // очистка кэша
     return 0;
 }
 ```
+
+Подробный пример использования можно посмотреть в файле "example/main.cpp".
